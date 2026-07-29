@@ -2,10 +2,63 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi primera web en GitHub Pages</title>
+    <title>Mi web con contador</title>
+    <style>
+        /* Estilos para centrar todo y darle un diseño limpio */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111; /* Fondo oscuro opcional para que resalte */
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .contador-box {
+            font-size: 18px;
+            background: #222;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+    </style>
 </head>
 <body>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Finger_heart.png" alt="Gracias por tu visita">
-    <img src="https://contador-de-visitas.com/c/kntbr0.github.io-mi-web.svg?style=split&amp;digits=6&amp;theme=dark" alt="contador de visitas" style="width:100%;height:auto">
+
+    <!-- Texto en negrita arriba -->
+    <h1>gracias por tu visita picaron</h1>
+
+    <!-- Imagen centrada -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Finger_heart.png" alt="Finger heart">
+
+    <!-- Contador de visitas abajo -->
+    <div class="contador-box">
+        Visitas: <span id="contador">Cargando...</span>
+    </div>
+
+    <script>
+        // Script para sumar y mostrar el contador automáticamente
+        fetch('https://api.countapi.xyz/hit/tu-usuario.github.io/mi-web')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('contador').innerText = data.value;
+            })
+            .catch(error => {
+                document.getElementById('contador').innerText = 'No disponible';
+            });
+    </script>
+
 </body>
 </html>
