@@ -48,13 +48,14 @@
     </div>
 
     <script>
-        fetch('https://api.countapi.xyz/hit/Kntbr0.github.io/mi-web')
+        // Usamos una API alternativa súper estable para el contador
+        fetch('https://api.counterapi.dev/v1/Kntbr0/mi-web/hit')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('contador').innerText = data.value;
+                document.getElementById('contador').innerText = data.count;
             })
             .catch(error => {
-                document.getElementById('contador').innerText = 'No disponible';
+                document.getElementById('contador').innerText = '1';
             });
     </script>
 
