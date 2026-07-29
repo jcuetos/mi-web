@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Mi web con contador</title>
     <style>
-        /* Estilos para centrar todo y darle un diseño limpio */
         body {
             display: flex;
             flex-direction: column;
@@ -12,7 +11,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #111; /* Fondo oscuro opcional para que resalte */
+            background-color: #111;
             color: #fff;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -49,8 +48,7 @@
     </div>
 
     <script>
-        // Script para sumar y mostrar el contador automáticamente
-        fetch('https://api.countapi.xyz/hit/tu-usuario.github.io/mi-web')
+        fetch('https://api.countapi.xyz/hit/Kntbr0.github.io/mi-web')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('contador').innerText = data.value;
